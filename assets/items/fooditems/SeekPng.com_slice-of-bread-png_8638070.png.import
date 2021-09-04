@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/SeekPng.com_slice-of-bread-png_8638070.png-38642bf7099ef7357e50ee38a9d533ab.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/items/fooditems/SeekPng.com_slice-of-bread-png_8638070.png"
+dest_files=[ "res://.import/SeekPng.com_slice-of-bread-png_8638070.png-38642bf7099ef7357e50ee38a9d533ab.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

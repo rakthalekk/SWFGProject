@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/items/fooditems/SeekPng.com_slice-of-bread-png_8638070.png" type="Texture" id=1]
+[ext_resource path="res://src/scripts/item_get.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.4729, 53.2184 )
+
+[node name="item" type="Node2D"]
+
+[node name="item_hitbox" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_hitbox"]
+shape = SubResource( 1 )
+
+[node name="SeekPngcom_slice-of-bread-png_8638070" type="Sprite" parent="item_hitbox"]
+position = Vector2( 1.36195, 1.01968 )
+scale = Vector2( 0.0325626, 0.0529885 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="item_hitbox" to="item_hitbox" method="_on_item_hitbox_body_entered"]
