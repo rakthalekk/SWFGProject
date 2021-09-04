@@ -8,11 +8,6 @@ var move_direction = Vector2.ZERO
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 func _physics_process(delta):
 	var move_direction = get_direction()
 	if (move_direction.x != 0):
@@ -51,4 +46,4 @@ func get_direction(): #get direction of the character
 
 
 func _on_WeaponHitbox_body_entered(body):
-	print("hit!")
+	body.queue_free()

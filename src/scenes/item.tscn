@@ -6,16 +6,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.4729, 53.2184 )
 
-[node name="item" type="Node2D"]
-
-[node name="item_hitbox" type="Area2D" parent="."]
+[node name="Item" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="item_hitbox"]
+[node name="ItemHitbox" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="SeekPngcom_slice-of-bread-png_8638070" type="Sprite" parent="item_hitbox"]
+[node name="SeekPngcom_slice-of-bread-png_8638070" type="Sprite" parent="."]
 position = Vector2( 1.36195, 1.01968 )
 scale = Vector2( 0.0325626, 0.0529885 )
 texture = ExtResource( 1 )
-[connection signal="body_entered" from="item_hitbox" to="item_hitbox" method="_on_item_hitbox_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_item_hitbox_body_entered"]
