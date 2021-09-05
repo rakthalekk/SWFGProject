@@ -36,6 +36,11 @@ config/name="Swfg Project"
 run/main_scene="res://src/scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=700
+
 [input]
 
 move_left={

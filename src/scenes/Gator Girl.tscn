@@ -299,7 +299,7 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 2.5, 2.5 )
+zoom = Vector2( 3, 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/back_attack = SubResource( 3 )

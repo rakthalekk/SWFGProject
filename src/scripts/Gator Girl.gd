@@ -65,5 +65,16 @@ func push(direction, speed):
 	push_counter = 10
 	velocity = direction * speed
 
+
 func _on_WeaponHitbox_body_entered(body):
-	body.queue_free()
+	var pos = $"Sprite/WeaponHitbox/Collider".position
+	if pos.x != 0 && sprite.scale.x > 0:
+		body.push(Vector2(1, 0), speed * 3)
+	elif pos.x != 0 && sprite.scale.x < 0:
+		body.push(Vector2(-1, 0), speed * 3)
+	elif pos.y > 0:
+		body.push(Vector2(0, 1), speed * 3)
+	elif pos.y < 0:
+		body.push(Vector2(0, -1), speed * 3)
+	body.damage(10)
+	
