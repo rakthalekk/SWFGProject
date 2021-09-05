@@ -284,7 +284,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 5
-frame = 12
+frame = 11
 
 [node name="WeaponHitbox" type="Area2D" parent="Sprite"]
 collision_layer = 0
@@ -293,7 +293,6 @@ collision_mask = 12
 [node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
 position = Vector2( 130, 0 )
 shape = SubResource( 2 )
-disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
