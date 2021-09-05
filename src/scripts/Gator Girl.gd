@@ -1,17 +1,23 @@
 class_name GatorGirl
 extends KinematicBody2D
 
+signal update_hp_count
+signal update_inventory
 
 var velocity = Vector2.ZERO
 var speed = 1000
 var move_direction = Vector2.ZERO
 var attacking = false
 var push_counter = 0
+var hp = 30
+var inventory = []
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
 func _physics_process(delta):
+	if (hp <= 0):
+		perish()
 	if (push_counter > 0):
 		push_counter -= 1;
 		velocity = move_and_slide(velocity)
@@ -66,6 +72,17 @@ func push(direction, speed):
 	velocity = direction * speed
 
 
+func damage(val):
+	if (push_counter == 0):
+		hp -= val
+		emit_signal("update_hp_count")
+
+
+func perish():
+	#if (rand_range(0, 1) > 0.5):
+	queue_free()
+
+
 func _on_WeaponHitbox_body_entered(body):
 	var pos = $"Sprite/WeaponHitbox/Collider".position
 	if pos.x != 0 && sprite.scale.x > 0:
@@ -77,4 +94,8 @@ func _on_WeaponHitbox_body_entered(body):
 	elif pos.y < 0:
 		body.push(Vector2(0, -1), speed * 3)
 	body.damage(10)
-	
+
+
+func add_item(item_name):
+	inventory.append(item_name)
+	emit_signal("update_inventory")

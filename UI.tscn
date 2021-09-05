@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/UI.gd" type="Script" id=1]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="HP" type="RichTextLabel" parent="."]
+margin_right = 57.0
+margin_bottom = 40.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/default_color = Color( 0.054902, 0.117647, 0.65098, 1 )
+text = "HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -445.0
+margin_right = -223.0
+margin_bottom = 64.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0.054902, 0.117647, 0.65098, 1 )
+text = "Inventory: "
+__meta__ = {
+"_edit_use_anchors_": false
+}

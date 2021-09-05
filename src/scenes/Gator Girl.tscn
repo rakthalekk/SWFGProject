@@ -174,7 +174,7 @@ tracks/0/keys = {
 "values": [ 3, 4 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 resource_name = "idle"
 length = 0.6
 loop = true
@@ -191,8 +191,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "right_attack"
+[sub_resource type="Animation" id=8]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -257,8 +256,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "right_walk"
+[sub_resource type="Animation" id=9]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -306,7 +304,7 @@ anims/back_attack = SubResource( 3 )
 anims/back_walk = SubResource( 4 )
 anims/forward_attack = SubResource( 5 )
 anims/forward_walk = SubResource( 6 )
-anims/idle = SubResource( 9 )
-anims/right_attack = SubResource( 7 )
-anims/right_walk = SubResource( 8 )
+anims/idle = SubResource( 7 )
+anims/right_attack = SubResource( 8 )
+anims/right_walk = SubResource( 9 )
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]
