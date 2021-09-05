@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "GatorGirl",
+"language": "GDScript",
+"path": "res://src/scripts/Gator Girl.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://src/scripts/NPC.gd"
+}, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://src/scripts/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"GatorGirl": "",
+"NPC": "",
 "StateMachine": ""
 }
 

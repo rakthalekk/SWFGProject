@@ -1,18 +1,17 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet_halved.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/Gator Girl.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 91.0837, 149.518 )
+extents = Vector2( 93.91, 161.821 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 105.748, 50 )
+extents = Vector2( 120, 80 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "back_attack"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -26,7 +25,7 @@ tracks/0/keys = {
 "values": [ 13, 14 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +37,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:position")
+tracks/2/path = NodePath("Sprite/WeaponHitbox/Collider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -47,10 +46,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -170 ) ]
+"values": [ Vector2( 0, -180 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:shape:extents")
+tracks/3/path = NodePath("Sprite/WeaponHitbox/Collider:shape:extents")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -59,7 +58,21 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 105.748, 50 ) ]
+"values": [ Vector2( 120, 80 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_attack"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -82,7 +95,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 resource_name = "forward_attack"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -96,7 +108,7 @@ tracks/0/keys = {
 "values": [ 9, 10 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -108,7 +120,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:position")
+tracks/2/path = NodePath("Sprite/WeaponHitbox/Collider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -117,10 +129,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 170 ) ]
+"values": [ Vector2( 0, 180 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:shape:extents")
+tracks/3/path = NodePath("Sprite/WeaponHitbox/Collider:shape:extents")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -129,7 +141,21 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 105.748, 50 ) ]
+"values": [ Vector2( 120, 80 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_attack"
+} ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -150,7 +176,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=9]
 resource_name = "idle"
-length = 1.5
+length = 0.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -159,7 +185,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2 ]
@@ -168,7 +194,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 resource_name = "right_attack"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -182,7 +207,7 @@ tracks/0/keys = {
 "values": [ 11, 12 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -194,7 +219,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:position")
+tracks/2/path = NodePath("Sprite/WeaponHitbox/Collider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -203,10 +228,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 120, 0 ) ]
+"values": [ Vector2( 150, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/WeaponHitbox/CollisionShape2D:shape:extents")
+tracks/3/path = NodePath("Sprite/WeaponHitbox/Collider:shape:extents")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -215,7 +240,21 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 58.5199, 139.341 ) ]
+"values": [ Vector2( 80, 150 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_attack"
+} ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -240,6 +279,7 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 18 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -252,13 +292,14 @@ frame = 2
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
-position = Vector2( 0, -170 )
+[node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
+position = Vector2( 0, -180 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 2.5, 2.5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/back_attack = SubResource( 3 )

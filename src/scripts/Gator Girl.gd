@@ -1,14 +1,23 @@
+class_name GatorGirl
 extends KinematicBody2D
 
 
 var velocity = Vector2.ZERO
-var speed = 600
+var speed = 1000
 var move_direction = Vector2.ZERO
+var attacking = false
+var push_counter = 0
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
 func _physics_process(delta):
+	if (push_counter > 0):
+		push_counter -= 1;
+		velocity = move_and_slide(velocity)
+		return
+	if (attacking):
+		return
 	var move_direction = get_direction()
 	if (move_direction.x != 0):
 		anim_player.play("right_walk")
@@ -24,6 +33,7 @@ func _physics_process(delta):
 	
 func _input(event):
 	if event.is_action_pressed("attack"):
+		attacking = true
 		var mouse_pos = get_viewport().get_mouse_position();
 		var xdis = mouse_pos.x - 520
 		var ydis = mouse_pos.y - 300
@@ -46,6 +56,14 @@ func get_direction(): #get direction of the character
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	)
 
+
+func end_attack():
+	attacking = false
+
+
+func push(direction, speed):
+	push_counter = 10
+	velocity = direction * speed
 
 func _on_WeaponHitbox_body_entered(body):
 	body.queue_free()
