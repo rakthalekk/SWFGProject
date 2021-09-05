@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/Wall Tiles/wall_tileset.png" type="Texture" id=1]
 [ext_resource path="res://assets/Floor Tiles/floor_tileset.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/scenes/Gator Girl.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/Enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 160, 160, 0, 160, 0, 0, 160, 0 )
@@ -192,3 +193,6 @@ __meta__ = {
 
 [node name="Gator Girl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1300.7, 988.809 )
+
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2335.97, 360.407 )

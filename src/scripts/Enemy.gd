@@ -6,9 +6,15 @@ var speed = 800
 
 func _physics_process(delta):
 	if target:
-		var dir = (target.position - position).normalized()
-		velocity = dir * speed
+		var direction = (target.position - position).normalized()
+		velocity = direction * speed
 		velocity = move_and_slide(velocity)
+		
+		for i in get_slide_count():
+			var collider = get_slide_collision(i).collider
+			if collider is GatorGirl:
+				#collider.push()
+				print("oof")
 
 
 func _on_RageZone_body_entered(body):
