@@ -288,7 +288,7 @@ frame = 2
 
 [node name="WeaponHitbox" type="Area2D" parent="Sprite"]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 
 [node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
 position = Vector2( 0, -180 )
@@ -307,4 +307,5 @@ anims/forward_walk = SubResource( 6 )
 anims/idle = SubResource( 7 )
 anims/right_attack = SubResource( 8 )
 anims/right_walk = SubResource( 9 )
+[connection signal="area_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_area_entered"]
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]

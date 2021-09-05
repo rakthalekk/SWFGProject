@@ -9,7 +9,7 @@ var speed = 1000
 var move_direction = Vector2.ZERO
 var attacking = false
 var push_counter = 0
-var hp = 30
+var hp = 50
 var inventory = []
 
 onready var anim_player = $AnimationPlayer
@@ -83,6 +83,11 @@ func perish():
 	queue_free()
 
 
+func add_item(item_name):
+	inventory.append(item_name)
+	emit_signal("update_inventory")
+
+
 func _on_WeaponHitbox_body_entered(body):
 	var pos = $"Sprite/WeaponHitbox/Collider".position
 	if pos.x != 0 && sprite.scale.x > 0:
@@ -96,6 +101,5 @@ func _on_WeaponHitbox_body_entered(body):
 	body.damage(10)
 
 
-func add_item(item_name):
-	inventory.append(item_name)
-	emit_signal("update_inventory")
+func _on_WeaponHitbox_area_entered(area):
+	area.queue_free()

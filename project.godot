@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/scripts/Gator Girl.gd"
 }, {
+"base": "Area2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://src/scripts/Item.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "NPC",
 "language": "GDScript",
@@ -23,11 +28,18 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://src/scripts/StateMachine.gd"
+}, {
+"base": "Area2D",
+"class": "WordAttack",
+"language": "GDScript",
+"path": "res://src/scripts/WordAttack.gd"
 } ]
 _global_script_class_icons={
 "GatorGirl": "",
+"Item": "",
 "NPC": "",
-"StateMachine": ""
+"StateMachine": "",
+"WordAttack": ""
 }
 
 [application]

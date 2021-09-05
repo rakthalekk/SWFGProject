@@ -12,6 +12,7 @@ var walk_speed = 400
 var walk_counter = 0
 var push_counter = 0
 var hp = 30
+var contact_dmg = 10
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
@@ -23,29 +24,26 @@ func _physics_process(delta):
 		push_counter -= 1;
 		velocity = move_and_slide(velocity)
 		return
-	if target:
-		anim_player.play("speed_flossing")
-		direction = (target.position - position).normalized();
-		velocity = direction * run_speed
-		
-		for i in get_slide_count():
+	for i in get_slide_count():
 			var collider = get_slide_collision(i).collider
 			if collider is GatorGirl:
-				collider.damage(10)
+				collider.damage(contact_dmg)
 				collider.push(direction, run_speed * 2)
-	else:
-		anim_player.play("flossing")
-		if walk_counter > 0:
-			walk_counter -= 1;
-		else:
-			if (rand_range(0, 1) > 0.5):
-				direction = Vector2.ZERO
-			else:
-				direction = Vector2(rand_range(-1, 1), rand_range(-1, 1))
-			walk_counter = rand_range(30, 50)
-		velocity = direction * walk_speed
+	handle_behavior()
 	velocity = move_and_slide(velocity)
 		
+
+func handle_behavior():
+	anim_player.play("flossing")
+	if walk_counter > 0:
+		walk_counter -= 1;
+	else:
+		if (rand_range(0, 1) > 0.5):
+			direction = Vector2.ZERO
+		else:
+			direction = Vector2(rand_range(-1, 1), rand_range(-1, 1))
+		walk_counter = rand_range(30, 50)
+	velocity = direction * walk_speed
 
 
 func _on_RageZone_body_entered(body):
