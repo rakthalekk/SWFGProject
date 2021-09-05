@@ -7,7 +7,7 @@
 extents = Vector2( 93.91, 161.821 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 120, 80 )
+extents = Vector2( 140, 200 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "back_attack"
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -180 ) ]
+"values": [ Vector2( 0, -100 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite/WeaponHitbox/Collider:shape:extents")
@@ -58,7 +58,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 120, 80 ) ]
+"values": [ Vector2( 200, 140 ) ]
 }
 tracks/4/type = "method"
 tracks/4/path = NodePath(".")
@@ -129,7 +129,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 180 ) ]
+"values": [ Vector2( 0, 100 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite/WeaponHitbox/Collider:shape:extents")
@@ -141,7 +141,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 120, 80 ) ]
+"values": [ Vector2( 200, 140 ) ]
 }
 tracks/4/type = "method"
 tracks/4/path = NodePath(".")
@@ -227,7 +227,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 150, 0 ) ]
+"values": [ Vector2( 130, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite/WeaponHitbox/Collider:shape:extents")
@@ -239,7 +239,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 80, 150 ) ]
+"values": [ Vector2( 140, 200 ) ]
 }
 tracks/4/type = "method"
 tracks/4/path = NodePath(".")
@@ -284,14 +284,14 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 5
-frame = 2
+frame = 12
 
 [node name="WeaponHitbox" type="Area2D" parent="Sprite"]
 collision_layer = 0
 collision_mask = 12
 
 [node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
-position = Vector2( 0, -180 )
+position = Vector2( 130, 0 )
 shape = SubResource( 2 )
 disabled = true
 
