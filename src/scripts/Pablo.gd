@@ -1,5 +1,11 @@
 extends "res://src/scripts/Enemy.gd"
 
+
+func ready():
+	contact_dmg = 10
+	hp = 30
+
+
 func handle_behavior():
 	if target:
 		anim_player.play("speed_flossing")

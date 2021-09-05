@@ -2,8 +2,9 @@ extends "res://src/scripts/Enemy.gd"
 
 var WORD_ATTACK = preload("res://src/scenes/WordAttack.tscn")
 
-func ready():
+func _init():
 	contact_dmg = 5
+	hp = 20
 
 func handle_behavior():
 	if (direction.x >= 0):

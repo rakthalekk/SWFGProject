@@ -4,10 +4,10 @@
 [ext_resource path="res://src/scripts/Enemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 130, 127 )
+extents = Vector2( 118, 125.577 )
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 785.11
+radius = 978.858
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4

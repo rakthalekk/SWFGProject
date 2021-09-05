@@ -8,6 +8,9 @@
 [node name="Heidi" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 0, 0 )
+
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 2 )
 hframes = 4

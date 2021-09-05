@@ -41,8 +41,8 @@ func _input(event):
 	if event.is_action_pressed("attack"):
 		attacking = true
 		var mouse_pos = get_viewport().get_mouse_position();
-		var xdis = mouse_pos.x - 520
-		var ydis = mouse_pos.y - 300
+		var xdis = mouse_pos.x - 640
+		var ydis = mouse_pos.y - 350
 		if (abs(xdis) > abs(ydis)):
 			anim_player.play("right_attack")
 			if (xdis > 0):

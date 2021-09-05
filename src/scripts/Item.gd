@@ -43,7 +43,7 @@ var weapons = [slash_weapons + stab_weapons + throwables]
 onready var sprite = $Sprite
 
 func _ready():
-	item_name = ingredients[randi() % ingredients.size()]
+	get_random_ingredient()
 	match_item_sprite()
 
 
@@ -95,6 +95,15 @@ func match_item_sprite():
 			sprite.texture = BREAD_TEX
 		
 
+
+func get_random_ingredient():
+	var ingredient_pool
+	match get_parent().level:
+		1:
+			ingredient_pool = ["bread", "tomato", "cheese", "cheese", "pasta"]
+		_:
+			ingredient_pool = ingredients
+	item_name = ingredient_pool[randi() % ingredient_pool.size()]
 
 func _on_item_hitbox_body_entered(body):
 	if body is GatorGirl:
