@@ -78,7 +78,7 @@ script = ExtResource( 3 )
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 2 )
 hframes = 5
-frame = 3
+frame = 4
 
 [node name="AnimationPlayer" parent="." index="2"]
 anims/daisy_wandering = SubResource( 1 )

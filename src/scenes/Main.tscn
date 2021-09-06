@@ -385,5 +385,17 @@ position = Vector2( -2259.49, 1469.86 )
 
 [node name="Daisy" parent="." instance=ExtResource( 12 )]
 position = Vector2( -899.041, 732.551 )
+
+[node name="Daisy2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2707.54, 586.51 )
+
+[node name="Daisy3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 4707.66, 2059.62 )
+
+[node name="Daisy4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2828.18, 3627.97 )
+
+[node name="Daisy5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 7044.32, 1767.54 )
 [connection signal="update_hp_count" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_hp_count"]
 [connection signal="update_inventory" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_inventory"]

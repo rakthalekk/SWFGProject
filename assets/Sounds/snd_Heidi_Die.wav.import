@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/snd_Heidi_Die.wav-a49cc45147af49d07e0ed2c0ebfdd43f.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/snd_Heidi_Die.wav"
+dest_files=[ "res://.import/snd_Heidi_Die.wav-a49cc45147af49d07e0ed2c0ebfdd43f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
