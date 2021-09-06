@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet_halved.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/Gator Girl.gd" type="Script" id=2]
@@ -272,8 +272,12 @@ tracks/0/keys = {
 "values": [ 5, 6 ]
 }
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 130.856, 199.401 )
+
 [node name="Gator Girl" type="KinematicBody2D"]
 collision_layer = 2
+collision_mask = 17
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -306,5 +310,13 @@ anims/forward_walk = SubResource( 6 )
 anims/idle = SubResource( 7 )
 anims/right_attack = SubResource( 8 )
 anims/right_walk = SubResource( 9 )
+
+[node name="InteractZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+shape = SubResource( 10 )
 [connection signal="area_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_area_entered"]
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]
+[connection signal="body_entered" from="InteractZone" to="." method="_on_InteractZone_body_entered"]

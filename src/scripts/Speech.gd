@@ -1,13 +1,12 @@
 extends Node2D
 
 var bubble_text = "hello my name is ralph"
-var can_shrink = true
 var bubble_text_len = 0
 var bubble_text_index = 0
 var current_text = ""
+var next_in_queue = false
 
 onready var label_text = get_node("VBoxContainer/Label")
-onready var nine_rect = get_node("VBoxContainer/Label/NinePatchRect")
 onready var timer = get_node("Timer")
 
 var do_close = false
@@ -16,12 +15,7 @@ var do_close = false
 func _ready():
 	bubble_text_len = bubble_text.length()
 	timer.start(1)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	get_parent().bubbling_moment = true
 
 
 func _on_Timer_timeout():
@@ -30,24 +24,15 @@ func _on_Timer_timeout():
 		label_text.text = current_text
 		
 		if (bubble_text_index < bubble_text_len - 1):
-			timer.start(0.04)
+			timer.start(0.02)
 			bubble_text_index += 1
 		else:
 			if(!do_close):
 				do_close = true
 				timer.start(1)
 	else:
-		if(bubble_text_len > 0):
-			current_text.erase(bubble_text_len - 1, 1)
-			label_text.text = current_text
-			bubble_text_len -= 1
-			
-			if(can_shrink):
-				nine_rect.rect_size -= Vector2(30, 0)
-				nine_rect.rect_position += Vector2(15, 0)
-			
-			timer.start(0.04)
+		if (next_in_queue):
+			get_parent().next_bubble = true
 		else:
-			queue_free()
-			
-	pass # Replace with function body.
+			get_parent().bubbling_moment = false
+		queue_free()

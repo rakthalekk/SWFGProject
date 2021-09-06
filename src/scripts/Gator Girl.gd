@@ -106,3 +106,7 @@ func _on_WeaponHitbox_body_entered(body):
 
 func _on_WeaponHitbox_area_entered(area):
 	area.queue_free()
+
+
+func _on_InteractZone_body_entered(body):
+	body.interact()

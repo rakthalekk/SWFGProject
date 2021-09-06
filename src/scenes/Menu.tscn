@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/Fonts/NESCyrillic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Fonts/Menu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/scripts/Menu.gd" type="Script" id=3]
-[ext_resource path="res://assets/Music/msu_sosparkly.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Music/msu_sosparkly.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -27,29 +27,29 @@ margin_right = 1280.0
 margin_bottom = 700.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 445.0
+margin_left = 285.0
 margin_top = 248.0
-margin_right = 835.0
+margin_right = 995.0
 margin_bottom = 451.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 390.0
+margin_right = 710.0
 margin_bottom = 59.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 390.0
+margin_right = 710.0
 margin_bottom = 59.0
 custom_fonts/font = ExtResource( 2 )
-text = "Crocateria"
+text = "Untitled Gator Game"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 63.0
-margin_right = 390.0
+margin_right = 710.0
 margin_bottom = 203.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 71.0
-margin_right = 319.0
+margin_left = 231.0
+margin_right = 479.0
 margin_bottom = 140.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]

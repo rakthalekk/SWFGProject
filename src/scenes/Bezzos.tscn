@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Enemy Sprites/Bezzos.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/NPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scripts/Bezzos.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 210.032, 220.905 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "bezzos_idle"
@@ -25,9 +28,12 @@ tracks/0/keys = {
 [node name="Bezzos" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 2 )
+
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
-frame = 2
+frame = 1
 
 [node name="AnimationPlayer" parent="." index="2"]
 anims/bezzos_idle = SubResource( 1 )

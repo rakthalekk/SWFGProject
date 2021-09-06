@@ -4,9 +4,10 @@
 [ext_resource path="res://src/scripts/NPC.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 89.3112, 106.058 )
+extents = Vector2( 84, 104 )
 
 [node name="NPC" type="KinematicBody2D"]
+collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
