@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/scenes/NPC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Enemy Sprites/darcy.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemy Sprites/darcy_idle.tres" type="Animation" id=3]
+[ext_resource path="res://src/scripts/Darcy.gd" type="Script" id=4]
 
 [node name="Darcy" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 2 )
 hframes = 4
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/darcy_idle = ExtResource( 3 )

@@ -18,10 +18,12 @@ onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
 func _physics_process(delta):
-	if (hp <= 0):
-		perish()
+	if (hp <= 0 && push_counter <= 0):
+		anim_player.play("oomph")
+		return
 	if (push_counter > 0):
 		push_counter -= 1;
+		anim_player.play("push")
 		velocity = move_and_slide(velocity)
 		return
 	for i in get_slide_count():

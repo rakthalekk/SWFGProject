@@ -4,6 +4,7 @@ var WORD_ATTACK = preload("res://src/scenes/WordAttack.tscn")
 
 func _init():
 	contact_dmg = 5
+	walk_speed = 100
 	hp = 20
 
 func handle_behavior():
