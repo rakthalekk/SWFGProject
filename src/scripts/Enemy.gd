@@ -27,10 +27,10 @@ func _physics_process(delta):
 		velocity = move_and_slide(velocity)
 		return
 	for i in get_slide_count():
-			var collider = get_slide_collision(i).collider
-			if collider is GatorGirl:
-				collider.damage(contact_dmg)
-				collider.push(direction, run_speed * 2)
+		var collider = get_slide_collision(i).collider
+		if collider is GatorGirl:
+			collider.damage(contact_dmg)
+			collider.push(direction, run_speed * 2)
 	handle_behavior()
 	velocity = move_and_slide(velocity)
 		
@@ -66,7 +66,6 @@ func damage(val):
 
 
 func perish():
-	#if (rand_range(0, 1) > 0.5):
 	var it = ITEM.instance()
 	it.position = position
 	get_parent().add_child(it)

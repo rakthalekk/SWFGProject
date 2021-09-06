@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/Wall Tiles/wall_tileset.png" type="Texture" id=1]
 [ext_resource path="res://assets/Floor Tiles/floor_tileset.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Music/mus_babyrage.ogg" type="AudioStream" id=10]
 [ext_resource path="res://src/scenes/Bezzos.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/scenes/Daisy.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 160, 160, 0, 160, 0, 0, 160, 0 )
@@ -305,7 +306,9 @@ script = ExtResource( 8 )
 
 [node name="UI" parent="." instance=ExtResource( 9 )]
 
-[node name="Foreground" type="TileMap" parent="."]
+[node name="Foreground" type="TileMap" parent="." groups=[
+"wall",
+]]
 tile_set = SubResource( 12 )
 cell_size = Vector2( 160, 160 )
 cell_quadrant_size = 40
@@ -379,5 +382,8 @@ position = Vector2( -461.412, 1493.64 )
 
 [node name="Shermin" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2259.49, 1469.86 )
+
+[node name="Daisy" parent="." instance=ExtResource( 12 )]
+position = Vector2( -899.041, 732.551 )
 [connection signal="update_hp_count" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_hp_count"]
 [connection signal="update_inventory" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_inventory"]

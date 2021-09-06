@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 118, 125.577 )
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 978.858
+[sub_resource type="CircleShape2D" id=2]
+radius = 919.997
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
@@ -29,6 +29,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RageZone"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="RageZone" to="." method="_on_RageZone_body_entered"]
 [connection signal="body_exited" from="RageZone" to="." method="_on_RageZone_body_exited"]

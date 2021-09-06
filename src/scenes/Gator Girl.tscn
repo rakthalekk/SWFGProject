@@ -297,6 +297,7 @@ collision_mask = 12
 [node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
 position = Vector2( 0, 100 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

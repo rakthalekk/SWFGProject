@@ -36,3 +36,7 @@ func attack():
 		atk.direction = Vector2(rand_range(-1, 1), rand_range(-1, 1)).normalized()
 	atk.position = position
 	get_parent().add_child(atk)
+
+
+func ouchy_noise():
+	$DeathThrows.play()
