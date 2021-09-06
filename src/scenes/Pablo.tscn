@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/scenes/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Pablo.gd" type="Script" id=2]
 [ext_resource path="res://assets/Enemy Sprites/speed_flossing.tres" type="Animation" id=3]
 [ext_resource path="res://assets/Enemy Sprites/flossing.tres" type="Animation" id=4]
 [ext_resource path="res://assets/Enemy Sprites/pablo_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sounds/pablo_is_dead_lol.wav" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "oomph"
@@ -30,9 +31,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2.4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "ouchy_noise"
+}, {
 "args": [  ],
 "method": "perish"
 } ]
@@ -67,3 +71,7 @@ anims/flossing = ExtResource( 4 )
 anims/oomph = SubResource( 1 )
 anims/push = SubResource( 2 )
 anims/speed_flossing = ExtResource( 3 )
+
+[node name="DeathThrows" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource( 6 )
+volume_db = -9.164

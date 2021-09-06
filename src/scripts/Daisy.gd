@@ -4,7 +4,7 @@ extends "res://src/scripts/Enemy.gd"
 func _init():
 	contact_dmg = 20
 	walk_speed = 1200
-	hp = 50
+	hp = 40
 	direction = Vector2(rand_range(-1, 1), rand_range(-1, 1)).normalized()
 
 
@@ -23,6 +23,5 @@ func handle_behavior():
 	velocity = direction * walk_speed
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func ouchy_noise():
+	$DeathThrows.play()

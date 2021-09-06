@@ -12,7 +12,7 @@ const SOTRUE = preload("res://assets/Projectiles/sotrue.png")
 var direction = Vector2.ZERO
 var speed = 15
 var lifespan = 300
-var dmg = 5
+var dmg = 10
 
 onready var sprite = $Sprite
 onready var anim_player = $AnimationPlayer
@@ -45,5 +45,5 @@ func _physics_process(delta):
 func _on_WordAttack_body_entered(body):
 	if body is GatorGirl:
 		body.damage(dmg)
-		queue_free()
+	queue_free()
 

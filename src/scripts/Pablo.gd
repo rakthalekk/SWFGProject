@@ -22,3 +22,7 @@ func handle_behavior():
 				direction = Vector2(rand_range(-1, 1), rand_range(-1, 1))
 			walk_counter = rand_range(30, 50)
 		velocity = direction * walk_speed
+
+
+func ouchy_noise():
+	$DeathThrows.play()
