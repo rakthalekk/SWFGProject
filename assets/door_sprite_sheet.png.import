@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door_sprite_sheet.png-5c7c7aed63c0bac0bd7f7d5877bdbc62.stex"
+path="res://.import/door_sprite_sheet.png-444e0bf9eabcdfd74d918b617fd815b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://door_sprite_sheet.png"
-dest_files=[ "res://.import/door_sprite_sheet.png-5c7c7aed63c0bac0bd7f7d5877bdbc62.stex" ]
+source_file="res://assets/door_sprite_sheet.png"
+dest_files=[ "res://.import/door_sprite_sheet.png-444e0bf9eabcdfd74d918b617fd815b0.stex" ]
 
 [params]
 

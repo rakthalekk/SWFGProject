@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/aplus.png-3cc2fe3ac59d521394b03991f809e12b.stex"
+path="res://.import/aplus.png-e81d0f880db369e0c9fd6bf2d8f25863.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aplus.png"
-dest_files=[ "res://.import/aplus.png-3cc2fe3ac59d521394b03991f809e12b.stex" ]
+source_file="res://assets/Screens/aplus.png"
+dest_files=[ "res://.import/aplus.png-e81d0f880db369e0c9fd6bf2d8f25863.stex" ]
 
 [params]
 

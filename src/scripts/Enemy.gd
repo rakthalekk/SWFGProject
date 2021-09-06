@@ -13,6 +13,7 @@ var walk_counter = 0
 var push_counter = 0
 var hp = 30
 var contact_dmg = 10
+var food_drop = false
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
@@ -20,6 +21,11 @@ onready var sprite = $Sprite
 func _physics_process(delta):
 	if (hp <= 0 && push_counter <= 0):
 		anim_player.play("oomph")
+		if (!food_drop):
+			food_drop = true
+			var it = ITEM.instance()
+			it.position = position
+			get_parent().add_child(it)
 		return
 	if (push_counter > 0):
 		push_counter -= 1;
@@ -66,7 +72,4 @@ func damage(val):
 
 
 func perish():
-	var it = ITEM.instance()
-	it.position = position
-	get_parent().add_child(it)
 	queue_free()

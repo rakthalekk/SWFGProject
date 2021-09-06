@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat-sticker.wav-3ba001b3b14d9332aedcbcb6cc3b5318.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/cat-sticker.wav"
+dest_files=[ "res://.import/cat-sticker.wav-3ba001b3b14d9332aedcbcb6cc3b5318.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

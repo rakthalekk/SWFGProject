@@ -8,7 +8,7 @@ onready var music = $"/root/Music/AudioStreamPlayer"
 
 signal update_hp_count
 signal update_inventory
-signal game_over
+signal game_over(did_win)
 
 var velocity = Vector2.ZERO
 var speed = 1000
@@ -26,6 +26,7 @@ func _physics_process(delta):
 		anim_player.play("oomph")
 		return
 	if (push_counter > 0):
+		attacking = false
 		push_counter -= 1;
 		anim_player.play("push")
 		velocity = move_and_slide(velocity)
@@ -76,7 +77,7 @@ func end_attack():
 
 
 func push(direction, speed):
-	if (hp > 0):
+	if (hp > 0 && push_counter <= 0):
 		push_counter = 10
 		velocity = direction * speed
 
@@ -90,7 +91,8 @@ func damage(val):
 
 
 func perish():
-	emit_signal("game_over")
+	music.stop()
+	emit_signal("game_over", false)
 
 
 func add_item(item_name):

@@ -1,8 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Fonts/NESCyrillic.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/Fonts/Menu.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Screens/title_sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://src/scripts/Menu.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "title_wiggle"
+length = 0.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -26,29 +44,31 @@ margin_right = 1280.0
 margin_bottom = 700.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 445.0
-margin_top = 248.0
-margin_right = 835.0
-margin_bottom = 451.0
+margin_left = 516.0
+margin_top = 278.0
+margin_right = 764.0
+margin_bottom = 422.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 390.0
-margin_bottom = 59.0
+margin_right = 248.0
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 390.0
-margin_bottom = 59.0
-custom_fonts/font = ExtResource( 2 )
-text = "Croceteria"
+[node name="Sprite" type="Sprite" parent="CenterContainer/VBoxContainer/CenterContainer"]
+position = Vector2( 130, -120 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+vframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+anims/title_wiggle = SubResource( 2 )
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 63.0
-margin_right = 390.0
-margin_bottom = 203.0
+margin_top = 4.0
+margin_right = 248.0
+margin_bottom = 144.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 71.0
-margin_right = 319.0
+margin_right = 248.0
 margin_bottom = 140.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -93,7 +113,7 @@ margin_left = 46.0
 margin_right = 248.0
 margin_bottom = 44.0
 custom_fonts/font = SubResource( 1 )
-text = "Options"
+text = "Credits"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 96.0

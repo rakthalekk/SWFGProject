@@ -23,7 +23,7 @@ func _process(delta):
 					create_bubble("That's not quite enough. I'll need 8 cheese, 4 pasta, and 4 bread.", false)
 					bubble_count -= 1
 				else:
-					create_bubble("Lol nice you win! pog", false)
+					player.emit_signal("game_over", true)
 		bubble_count += 1
 
 

@@ -338,28 +338,13 @@ __meta__ = {
 position = Vector2( -1371.35, 1168.76 )
 
 [node name="Pablo" parent="." instance=ExtResource( 5 )]
-position = Vector2( 7903.44, 1479.59 )
+position = Vector2( 7360.99, 1115.13 )
 
 [node name="Pablo2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 7884.73, 3815.43 )
-
-[node name="Pablo3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1090.42, 3655.64 )
-
-[node name="Pablo4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 626.418, 2195.64 )
+position = Vector2( 1517.67, 3411.83 )
 
 [node name="Heidi" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3210.34, 1251.28 )
-
-[node name="Heidi2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5300.93, 3114.58 )
-
-[node name="Heidi3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3468.08, 3601.73 )
-
-[node name="Heidi4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5561.58, 923.405 )
+position = Vector2( 4248.68, 2290.85 )
 
 [node name="Bezzos" parent="." instance=ExtResource( 11 )]
 position = Vector2( -1432.39, 436.499 )
@@ -371,13 +356,7 @@ position = Vector2( -461.412, 1263.33 )
 position = Vector2( -2263.27, 1288.64 )
 
 [node name="Daisy" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2001.12, 2808.44 )
-
-[node name="Daisy2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2707.54, 586.51 )
-
-[node name="Daisy3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 6173.96, 3466.59 )
+position = Vector2( 6151.13, 3110.01 )
 
 [node name="EnemyWall" type="StaticBody2D" parent="."]
 position = Vector2( 0, 500 )

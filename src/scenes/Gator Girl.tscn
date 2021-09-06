@@ -190,6 +190,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "oomph"
@@ -222,6 +234,18 @@ tracks/1/keys = {
 "method": "perish"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "push"
@@ -237,6 +261,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -336,7 +372,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 6
-frame = 17
+frame = 5
 
 [node name="WeaponHitbox" type="Area2D" parent="Sprite"]
 collision_layer = 0

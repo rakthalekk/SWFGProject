@@ -41,6 +41,18 @@ tracks/1/keys = {
 "method": "perish"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "push"
@@ -64,7 +76,6 @@ script = ExtResource( 2 )
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 5 )
 hframes = 9
-frame = 6
 
 [node name="AnimationPlayer" parent="." index="2"]
 anims/flossing = ExtResource( 4 )
