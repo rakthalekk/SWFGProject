@@ -108,4 +108,6 @@ func get_random_ingredient():
 func _on_item_hitbox_body_entered(body):
 	if body is GatorGirl:
 		body.add_item(item_name)
+		body.hp += 5
+		body.emit_signal("update_hp_count")
 		queue_free() #once collision is detected, remove item.

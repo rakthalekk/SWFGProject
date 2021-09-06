@@ -7,5 +7,8 @@
 [node name="Shermin" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="Sprite" parent="." index="1"]
+frame = 2
+
 [node name="AnimationPlayer" parent="." index="2"]
 anims/shermin_idle = ExtResource( 2 )

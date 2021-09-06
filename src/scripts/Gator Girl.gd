@@ -10,7 +10,7 @@ var move_direction = Vector2.ZERO
 var attacking = false
 var push_counter = 0
 var hp = 50
-var inventory = []
+var inventory = {}
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
@@ -84,7 +84,10 @@ func perish():
 
 
 func add_item(item_name):
-	inventory.append(item_name)
+	if (inventory.has(item_name)):
+		inventory[item_name] += 1
+	else:
+		inventory[item_name] = 1
 	emit_signal("update_inventory")
 
 
