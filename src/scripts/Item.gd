@@ -99,7 +99,7 @@ func get_random_ingredient():
 	var ingredient_pool
 	match get_parent().level:
 		1:
-			ingredient_pool = ["bread", "tomato", "cheese", "cheese", "pasta"]
+			ingredient_pool = ["bread", "cheese", "cheese", "pasta"]
 		_:
 			ingredient_pool = ingredients
 	item_name = ingredient_pool[randi() % ingredient_pool.size()]
