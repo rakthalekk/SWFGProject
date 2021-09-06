@@ -93,7 +93,6 @@ func match_item_sprite():
 			sprite.texture = FISH_TEX
 		_:
 			sprite.texture = BREAD_TEX
-		
 
 
 func get_random_ingredient():
@@ -110,4 +109,5 @@ func _on_item_hitbox_body_entered(body):
 		body.add_item(item_name)
 		body.hp += 5
 		body.emit_signal("update_hp_count")
+		body.play_pickup_sound()
 		queue_free() #once collision is detected, remove item.

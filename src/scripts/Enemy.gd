@@ -17,6 +17,7 @@ var food_drop = false
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
+onready var hit_sound = $HitSound
 
 func _physics_process(delta):
 	if (hp <= 0 && push_counter <= 0):
@@ -30,6 +31,7 @@ func _physics_process(delta):
 	if (push_counter > 0):
 		push_counter -= 1;
 		anim_player.play("push")
+		hit_sound.play()
 		velocity = move_and_slide(velocity)
 		return
 	for i in get_slide_count():

@@ -10,7 +10,7 @@ func _ready():
 	anim_player.play("darcy_idle")
 
 
-func _process(delta):
+func _process(_delta):
 	if (next_bubble):
 		next_bubble = false
 		match bubble_count:

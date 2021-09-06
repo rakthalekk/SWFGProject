@@ -20,10 +20,13 @@ var inventory = {}
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
+onready var death_sound = $DeathThrows
+onready var pickup_sound = $PickupSound
 
 func _physics_process(delta):
 	if (hp <= 0 && push_counter <= 0):
 		anim_player.play("oomph")
+		death_sound.play()
 		return
 	if (push_counter > 0):
 		attacking = false
@@ -101,6 +104,10 @@ func add_item(item_name):
 	else:
 		inventory[item_name] = 1
 	emit_signal("update_inventory")
+
+
+func play_pickup_sound():
+	pickup_sound.play()
 
 
 func _on_WeaponHitbox_body_entered(body):

@@ -366,13 +366,19 @@ collision_mask = 0
 shape = SubResource( 14 )
 
 [node name="Door" parent="." instance=ExtResource( 13 )]
-position = Vector2( 4719.07, 306.172 )
+position = Vector2( 6044.69, 1535.4 )
 
 [node name="Door2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2048.04, 3813.79 )
+position = Vector2( 3665.09, 3143.09 )
 
 [node name="Door3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 8357.72, 2634.51 )
+position = Vector2( 6913.33, 3287.22 )
+
+[node name="Door4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 290.69, 2112.54 )
+
+[node name="Door5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 3713.13, 296.557 )
 [connection signal="game_over" from="Gator Girl" to="." method="_on_Gator_Girl_game_over"]
 [connection signal="update_hp_count" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_hp_count"]
 [connection signal="update_inventory" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_inventory"]

@@ -34,7 +34,7 @@ func _ready():
 		7:
 			sprite.texture = SOTRUE
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	anim_player.play("word_attack")
 	if (lifespan <= 0):
 		queue_free()

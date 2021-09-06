@@ -85,4 +85,4 @@ anims/speed_flossing = ExtResource( 3 )
 
 [node name="DeathThrows" type="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource( 6 )
-volume_db = -9.164
+volume_db = -13.203

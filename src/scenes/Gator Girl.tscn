@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet_3.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/Gator Girl.gd" type="Script" id=2]
+[ext_resource path="res://assets/Sounds/Orchestra_hit_-_MU50XG.ogg.mp3.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/gator_down.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 74.704, 128.19 )
@@ -404,6 +406,13 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
 shape = SubResource( 12 )
+
+[node name="DeathThrows" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 1.0
 [connection signal="area_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_area_entered"]
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]
 [connection signal="area_entered" from="InteractZone" to="." method="_on_InteractZone_area_entered"]

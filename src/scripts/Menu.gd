@@ -15,7 +15,7 @@ func _ready():
 	music.play()
 	title_anim.play("title_wiggle")
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("move_down") and current_selection < 2:
 		current_selection += 1
 		set_current_selection(current_selection)
