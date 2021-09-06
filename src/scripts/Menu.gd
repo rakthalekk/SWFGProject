@@ -5,12 +5,15 @@ const first_scene = preload("res://src/scenes/Main.tscn")
 onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
 onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
+onready var title_anim = $"CenterContainer/VBoxContainer/CenterContainer/AnimationPlayer"
+onready var music = $"/root/Music/AudioStreamPlayer"
 
 var current_selection = 0
 
 func _ready():
 	set_current_selection(0)
-	$"CenterContainer/VBoxContainer/CenterContainer/AnimationPlayer".play("title_wiggle")
+	music.play()
+	title_anim.play("title_wiggle")
 
 func _process(delta):
 	if Input.is_action_just_pressed("move_down") and current_selection < 2:
