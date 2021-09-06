@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Fonts/NESCyrillic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Fonts/Menu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/scripts/Menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/Music/msu_sosparkly.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -117,3 +118,7 @@ margin_bottom = 44.0
 rect_min_size = Vector2( 202, 0 )
 custom_fonts/font = SubResource( 1 )
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
