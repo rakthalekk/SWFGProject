@@ -406,5 +406,6 @@ position = Vector2( 2048.04, 3813.79 )
 
 [node name="Door3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 8357.72, 2634.51 )
+[connection signal="game_over" from="Gator Girl" to="." method="_on_Gator_Girl_game_over"]
 [connection signal="update_hp_count" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_hp_count"]
 [connection signal="update_inventory" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_inventory"]

@@ -8,6 +8,7 @@ onready var music = $"/root/Music/AudioStreamPlayer"
 
 signal update_hp_count
 signal update_inventory
+signal game_over
 
 var velocity = Vector2.ZERO
 var speed = 1000
@@ -89,8 +90,7 @@ func damage(val):
 
 
 func perish():
-	#if (rand_range(0, 1) > 0.5):
-	queue_free()
+	emit_signal("game_over")
 
 
 func add_item(item_name):
