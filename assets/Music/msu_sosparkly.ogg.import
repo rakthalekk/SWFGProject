@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/msu_sosparkly.ogg-1ddb722f639c55865c81220f37bf7498.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/msu_sosparkly.ogg"
+dest_files=[ "res://.import/msu_sosparkly.ogg-1ddb722f639c55865c81220f37bf7498.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
