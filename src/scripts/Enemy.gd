@@ -30,7 +30,7 @@ func _physics_process(delta):
 		var collider = get_slide_collision(i).collider
 		if collider is GatorGirl:
 			collider.damage(contact_dmg)
-			collider.push(direction, run_speed * 2)
+			collider.push(direction, run_speed * 3)
 	handle_behavior()
 	velocity = move_and_slide(velocity)
 		

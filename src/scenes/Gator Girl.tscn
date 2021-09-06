@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet_halved.png" type="Texture" id=1]
+[ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet_3.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/Gator Girl.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 74.704, 128.19 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 200, 140 )
+extents = Vector2( 140, 200 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "back_attack"
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 13, 14 ]
+"values": [ 15, 16 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 7, 8 ]
+"values": [ 8, 9 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -105,7 +105,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 9, 10 ]
+"values": [ 10, 12 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
@@ -192,6 +192,54 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=8]
+resource_name = "oomph"
+length = 2.4
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 17, 11, 17, 11, 17, 11, 17, 11, 17, 11, 17 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perish"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "push"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+
+[sub_resource type="Animation" id=10]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -203,7 +251,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 11, 12 ]
+"values": [ 13, 14 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite/WeaponHitbox/Collider:disabled")
@@ -256,7 +304,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -269,10 +317,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 5, 6 ]
+"values": [ 6, 7 ]
 }
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 130.856, 199.401 )
 
 [node name="Gator Girl" type="KinematicBody2D"]
@@ -287,16 +335,17 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 5
-frame = 13
+hframes = 6
+frame = 17
 
 [node name="WeaponHitbox" type="Area2D" parent="Sprite"]
 collision_layer = 0
 collision_mask = 12
 
 [node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
-position = Vector2( 0, -100 )
+position = Vector2( 130, 0 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -308,15 +357,17 @@ anims/back_walk = SubResource( 4 )
 anims/forward_attack = SubResource( 5 )
 anims/forward_walk = SubResource( 6 )
 anims/idle = SubResource( 7 )
-anims/right_attack = SubResource( 8 )
-anims/right_walk = SubResource( 9 )
+anims/oomph = SubResource( 8 )
+anims/push = SubResource( 9 )
+anims/right_attack = SubResource( 10 )
+anims/right_walk = SubResource( 11 )
 
 [node name="InteractZone" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 [connection signal="area_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_area_entered"]
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]
 [connection signal="area_entered" from="InteractZone" to="." method="_on_InteractZone_area_entered"]

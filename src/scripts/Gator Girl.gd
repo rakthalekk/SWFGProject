@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 const SOSPARKLY = preload("res://assets/Music/msu_sosparkly.ogg")
 const BABY_RAGE = preload("res://assets/Music/mus_babyrage.ogg")
+var in_classroom = true
 onready var music = $"/root/Music/AudioStreamPlayer"
 
 signal update_hp_count
@@ -20,10 +21,12 @@ onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
 func _physics_process(delta):
-	if (hp <= 0):
-		perish()
+	if (hp <= 0 && push_counter <= 0):
+		anim_player.play("oomph")
+		return
 	if (push_counter > 0):
 		push_counter -= 1;
+		anim_player.play("push")
 		velocity = move_and_slide(velocity)
 		return
 	if (attacking):
@@ -72,13 +75,16 @@ func end_attack():
 
 
 func push(direction, speed):
-	push_counter = 10
-	velocity = direction * speed
+	if (hp > 0):
+		push_counter = 10
+		velocity = direction * speed
 
 
 func damage(val):
-	if (push_counter == 0):
+	if (push_counter == 0 and hp > 0):
 		hp -= val
+		if (hp < 0):
+			hp = 0
 		emit_signal("update_hp_count")
 
 
@@ -117,10 +123,12 @@ func _on_InteractZone_body_entered(body):
 
 
 func _on_InteractZone_area_entered(area):
-	if (music.stream == SOSPARKLY):
+	if (in_classroom):
 		music.stream = BABY_RAGE
 		music.stream.loop_offset = 2.5
+		in_classroom = false
 	else:
 		music.stream = SOSPARKLY
 		music.stream.loop_offset = 0
+		in_classroom = true
 	music.play()

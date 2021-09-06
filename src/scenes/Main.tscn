@@ -8,10 +8,10 @@
 [ext_resource path="res://src/scenes/Darcy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/Shermin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scripts/Main.gd" type="Script" id=8]
-[ext_resource path="res://UI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/scenes/UI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/Bezzos.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scenes/Daisy.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Door.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/scenes/Door.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 160, 160, 0, 160, 0, 0, 160, 0 )
