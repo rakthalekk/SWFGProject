@@ -6,6 +6,7 @@ onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxC
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
 onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
 onready var title_anim = $"CenterContainer/VBoxContainer/CenterContainer/AnimationPlayer"
+onready var credits = $Credits
 onready var music = $"/root/Music/AudioStreamPlayer"
 
 var current_selection = 0
@@ -15,13 +16,16 @@ func _ready():
 	music.play()
 	title_anim.play("title_wiggle")
 
+
 func _process(_delta):
 	if Input.is_action_just_pressed("move_down") and current_selection < 2:
 		current_selection += 1
 		set_current_selection(current_selection)
+		credits.visible = false
 	elif Input.is_action_just_pressed("move_up") and current_selection > 0:
 		current_selection -= 1
 		set_current_selection(current_selection)
+		credits.visible = false
 	elif Input.is_action_just_pressed("ui_accept"):
 		handle_selection(current_selection)
 
@@ -30,7 +34,7 @@ func handle_selection(_current_selection):
 		get_parent().add_child(first_scene.instance())
 		queue_free()
 	elif _current_selection == 1:
-		print("Add options!")
+		credits.visible = true
 	elif _current_selection == 2:
 		get_tree().quit()
 

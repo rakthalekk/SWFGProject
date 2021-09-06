@@ -40,6 +40,7 @@ _global_script_class_icons={
 
 config/name="Swfg Project"
 run/main_scene="res://src/scenes/Menu.tscn"
+config/icon="res://icon.png"
 
 [autoload]
 

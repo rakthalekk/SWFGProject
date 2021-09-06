@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Fonts/NESCyrillic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Screens/title_sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://src/scripts/Menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/Screens/Credits.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "title_wiggle"
@@ -138,3 +139,8 @@ margin_bottom = 44.0
 rect_min_size = Vector2( 202, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Exit"
+
+[node name="Credits" type="Sprite" parent="."]
+visible = false
+position = Vector2( 639.794, 350 )
+texture = ExtResource( 4 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gator_dies.wav-2c18ba2f674c9469be2ad0713b7e2635.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Gator_dies.wav"
+dest_files=[ "res://.import/Gator_dies.wav-2c18ba2f674c9469be2ad0713b7e2635.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
