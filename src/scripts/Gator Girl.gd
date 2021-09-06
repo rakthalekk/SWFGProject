@@ -86,13 +86,13 @@ func end_attack():
 func push(direction, speed):
 	if (hp > 0 && push_counter <= 0):
 		push_counter = 10
-		hurt_sound.play()
 		velocity = direction * speed
 
 
 func damage(val):
 	if (push_counter == 0 and hp > 0):
 		hp -= val
+		hurt_sound.play()
 		if (hp < 0):
 			hp = 0
 		emit_signal("update_hp_count")

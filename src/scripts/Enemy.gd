@@ -29,7 +29,6 @@ func _physics_process(delta):
 	if (push_counter > 0):
 		push_counter -= 1;
 		anim_player.play("push")
-		hit_sound.play()
 		velocity = move_and_slide(velocity)
 		return
 	for i in get_slide_count():
@@ -69,6 +68,7 @@ func push(direction, speed):
 
 func damage(val):
 	hp -= val
+	hit_sound.play()
 
 
 func perish():
