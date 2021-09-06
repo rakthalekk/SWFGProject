@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-signal drop_item
-
 const ITEM = preload("res://src/scenes/Item.tscn")
 
 var target = null

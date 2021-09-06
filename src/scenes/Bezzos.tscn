@@ -32,7 +32,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
-frame = 1
 
 [node name="AnimationPlayer" parent="." index="2"]
 anims/bezzos_idle = SubResource( 2 )

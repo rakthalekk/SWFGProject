@@ -4,6 +4,7 @@ const GAME_OVER = preload("res://assets/Screens/failure.png")
 const WIN_SCREEN = preload("res://assets/Screens/aplus.png")
 const LOSE_SOUND = preload("res://assets/Sounds/u_succ_lol.wav")
 const WIN_SOUND = preload("res://assets/Sounds/cat-sticker.wav")
+const SOSPARKLY = preload("res://assets/Music/msu_sosparkly.ogg")
 
 export(String, FILE, "*.tscn") var menu
 
@@ -24,4 +25,5 @@ func set_win():
 func _on_Button_button_down():
 	if ResourceLoader.exists(menu):
 		var _error = get_tree().change_scene(menu)
+		$"/root/Music/AudioStreamPlayer".stream = SOSPARKLY
 	queue_free()

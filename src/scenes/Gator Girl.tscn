@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/Gator Sprites/gator_sprite_sheet_3.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/Gator Girl.gd" type="Script" id=2]
-[ext_resource path="res://assets/Sounds/Orchestra_hit_-_MU50XG.ogg.mp3.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/Orchestra_hit_2.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/Sounds/gator_down.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -413,6 +413,9 @@ stream = ExtResource( 4 )
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = 1.0
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="area_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_area_entered"]
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]
 [connection signal="area_entered" from="InteractZone" to="." method="_on_InteractZone_area_entered"]

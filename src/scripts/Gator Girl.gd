@@ -17,16 +17,20 @@ var attacking = false
 var push_counter = 0
 var hp = 50
 var inventory = {}
+var haha_funny_sound_variable_that_will_be_used_here_and_nowhere_else = true
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 onready var death_sound = $DeathThrows
 onready var pickup_sound = $PickupSound
+onready var hurt_sound = $HurtSound
 
 func _physics_process(delta):
 	if (hp <= 0 && push_counter <= 0):
 		anim_player.play("oomph")
-		death_sound.play()
+		if (haha_funny_sound_variable_that_will_be_used_here_and_nowhere_else):
+			death_sound.play()
+			haha_funny_sound_variable_that_will_be_used_here_and_nowhere_else = false
 		return
 	if (push_counter > 0):
 		attacking = false
@@ -82,6 +86,7 @@ func end_attack():
 func push(direction, speed):
 	if (hp > 0 && push_counter <= 0):
 		push_counter = 10
+		hurt_sound.play()
 		velocity = direction * speed
 
 

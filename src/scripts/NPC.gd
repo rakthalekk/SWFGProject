@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const BUBBLE = preload("res://src/scenes/Speech.tscn")
 
-var next_bubble = false
+var next_bubble = true
 var bubbling_moment = false
 var bubble_count = 1
 var bubble_offset = Vector2(1500, 0)
