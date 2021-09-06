@@ -326,7 +326,7 @@ __meta__ = {
 }
 
 [node name="Gator Girl" parent="." instance=ExtResource( 4 )]
-position = Vector2( -548.419, 1306.71 )
+position = Vector2( -1371.35, 1168.76 )
 
 [node name="Pablo" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3852.05, 1174.46 )
@@ -375,9 +375,9 @@ autoplay = true
 position = Vector2( -1432.39, 436.499 )
 
 [node name="Darcy" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1897.97, 1441.32 )
+position = Vector2( -461.412, 1493.64 )
 
 [node name="Shermin" parent="." instance=ExtResource( 7 )]
-position = Vector2( -2307.06, 1398.51 )
+position = Vector2( -2259.49, 1469.86 )
 [connection signal="update_hp_count" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_hp_count"]
 [connection signal="update_inventory" from="Gator Girl" to="UI" method="_on_Gator_Girl_update_inventory"]
