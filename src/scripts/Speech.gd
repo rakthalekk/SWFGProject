@@ -29,7 +29,7 @@ func _on_Timer_timeout():
 		else:
 			if(!do_close):
 				do_close = true
-				timer.start(2)
+				timer.start(3)
 	else:
 		if (next_in_queue):
 			get_parent().next_bubble = true

@@ -288,16 +288,15 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 5
-frame = 3
+frame = 13
 
 [node name="WeaponHitbox" type="Area2D" parent="Sprite"]
 collision_layer = 0
 collision_mask = 12
 
 [node name="Collider" type="CollisionShape2D" parent="Sprite/WeaponHitbox"]
-position = Vector2( 0, 100 )
+position = Vector2( 0, -100 )
 shape = SubResource( 2 )
-disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -320,4 +319,5 @@ collision_mask = 16
 shape = SubResource( 10 )
 [connection signal="area_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_area_entered"]
 [connection signal="body_entered" from="Sprite/WeaponHitbox" to="." method="_on_WeaponHitbox_body_entered"]
+[connection signal="area_entered" from="InteractZone" to="." method="_on_InteractZone_area_entered"]
 [connection signal="body_entered" from="InteractZone" to="." method="_on_InteractZone_body_entered"]

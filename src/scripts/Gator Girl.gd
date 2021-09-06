@@ -1,6 +1,10 @@
 class_name GatorGirl
 extends KinematicBody2D
 
+const SOSPARKLY = preload("res://assets/Music/msu_sosparkly.ogg")
+const BABY_RAGE = preload("res://assets/Music/mus_babyrage.ogg")
+onready var music = $"/root/Music/AudioStreamPlayer"
+
 signal update_hp_count
 signal update_inventory
 
@@ -110,3 +114,13 @@ func _on_WeaponHitbox_area_entered(area):
 
 func _on_InteractZone_body_entered(body):
 	body.interact()
+
+
+func _on_InteractZone_area_entered(area):
+	if (music.stream == SOSPARKLY):
+		music.stream = BABY_RAGE
+		music.stream.loop_offset = 2.5
+	else:
+		music.stream = SOSPARKLY
+		music.stream.loop_offset = 0
+	music.play()

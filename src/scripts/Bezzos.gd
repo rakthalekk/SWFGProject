@@ -1,13 +1,5 @@
 extends NPC
 
-const BUBBLE = preload("res://src/scenes/Speech.tscn")
-
-var next_bubble = true
-var bubbling_moment = false
-var bubble_count = 1
-
-onready var player = get_parent().get_node("Gator Girl")
-
 func _ready():
 	anim_player.play("bezzos_idle")
 
@@ -33,19 +25,6 @@ func _process(delta):
 				else:
 					create_bubble("Lol nice you win! pog", false)
 		bubble_count += 1
-
-func create_bubble(text, next_in_queue):
-	var bubble = BUBBLE.instance()
-	bubble.bubble_text = text
-	bubble.next_in_queue = next_in_queue
-	bubble.position = position + Vector2(1500, 0)
-	call_deferred("add_child", bubble)
-
-
-func interact():
-	if (!bubbling_moment):
-		check_player_inventory()
-		next_bubble = true
 
 
 func check_player_inventory():

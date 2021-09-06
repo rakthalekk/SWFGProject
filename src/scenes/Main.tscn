@@ -9,7 +9,6 @@
 [ext_resource path="res://src/scenes/Shermin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scripts/Main.gd" type="Script" id=8]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/Music/mus_babyrage.ogg" type="AudioStream" id=10]
 [ext_resource path="res://src/scenes/Bezzos.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scenes/Daisy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=13]
@@ -305,6 +304,9 @@ points = PoolVector2Array( 160, 160, 0, 160, 0, 0, 160, 0 )
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 156.018, 340.443 )
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 4.46143, 327.715 )
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -331,10 +333,6 @@ text = "“My Bungus is bigger than yours”
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-autoplay = true
 
 [node name="Gator Girl" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1371.35, 1168.76 )
@@ -367,10 +365,10 @@ position = Vector2( 5561.58, 923.405 )
 position = Vector2( -1432.39, 436.499 )
 
 [node name="Darcy" parent="." instance=ExtResource( 6 )]
-position = Vector2( -461.412, 1493.64 )
+position = Vector2( -461.412, 1263.33 )
 
 [node name="Shermin" parent="." instance=ExtResource( 7 )]
-position = Vector2( -2259.49, 1469.86 )
+position = Vector2( -2263.27, 1288.64 )
 
 [node name="Daisy" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2001.12, 2808.44 )
@@ -389,6 +387,16 @@ collision_mask = 12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyWall"]
 position = Vector2( 7.58508, -42.8115 )
 shape = SubResource( 13 )
+
+[node name="MusicChange" type="Area2D" parent="." groups=[
+"music",
+]]
+position = Vector2( 5.07666, 454.81 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChange"]
+shape = SubResource( 14 )
 
 [node name="Door" parent="." instance=ExtResource( 13 )]
 position = Vector2( 4719.07, 306.172 )

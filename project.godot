@@ -41,6 +41,10 @@ _global_script_class_icons={
 config/name="Swfg Project"
 run/main_scene="res://src/scenes/Menu.tscn"
 
+[autoload]
+
+Music="*res://src/scenes/Music.tscn"
+
 [display]
 
 window/size/width=1280
