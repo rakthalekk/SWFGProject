@@ -17,7 +17,7 @@ func _process(_delta):
 			4:
 				create_bubble("I’ll give you some extra credit points if you do.", true)
 			5:
-				create_bubble("Could you collect 8 cheese, 4 pasta, and 4 bread for me?", false)
+				create_bubble("Could you collect 6 cheese, 3 pasta, and 3 bread for me?", false)
 			6:
 				if (!check_player_inventory()):
 					create_bubble("That's not quite enough. I'll need 6 cheese, 3 pasta, and 3 bread.", false)
